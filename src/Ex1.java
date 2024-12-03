@@ -34,15 +34,10 @@ public class Ex1 {
         boolean ans = true;
         for (char i : stringIsNumber.toCharArray()) {
             if (i < '0' || i > '9') { // Check if character is not a digit
-                System.out.println("you entered invalid string");
                 ans = false;
                 break;
             }
         }
-
-            // add your code here
-
-        ////////////////////
         return ans;
     }
 
