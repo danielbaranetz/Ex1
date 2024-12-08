@@ -36,7 +36,15 @@ public class Ex1 {
             }
             number = parts[0];
             baseStr = parts[1];
-
+            if (number.isEmpty()) {
+                return -1;
+            }
+            if (number.matches("[a-z]+")) {
+                return -1;
+            }
+            if (number.startsWith(" ")) {
+                return -1;
+            }
             // Determine the base
             if (baseStr.equals("A")) base = 10;
             else if (baseStr.equals("B")) base = 11;
@@ -110,14 +118,15 @@ public class Ex1 {
      * @return a String representing a number (in base) equals to num, or an empty String (in case of wrong input).
      */
     public static String int2Number(int num, int base) {
-        if (num <= 0 || base < 2 || base > 16) return "";
+        if (num < 0 || base < 2 || base > 16) return "";
         String number = Integer.toString(num, base);
         String baseStr;
         if (base >= 10) {
             baseStr = String.valueOf((char) ('A' + (base - 10)));
         } else {
             baseStr = String.valueOf(base);
-        }        if (base == 10) {
+        }
+        if (base == 10) {
             return number;
         }
         return number + "b" + baseStr;
