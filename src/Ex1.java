@@ -1,16 +1,3 @@
-
-/**
- * This class represents a simple solution for Ex1.
- * As defined here: https://docs.google.com/document/d/1AJ9wtnL1qdEs4DAKqBlO1bXCM6r6GJ_J/r/edit/edit
- * In this assignment, we will design a number formatting converter and calculator.
- * In general, we will use Strings as numbers over basis of binary till Hexa.
- * [2-16], 10-16 are represented by A,B,..G.
- * The general representation of the numbers is as a String with the following format:
- * <number><b><base> e.g., “135bA” (i.e., “135”, as 10 is the default base), “100111b2”, “12345b6”,”012b5”, “123bG”, “EFbG”.
- * The following are NOT in the format (not a valid number):
- * “b2”, “0b1”, “123b”, “1234b11”, “3b3”, “-3b5”, “3 b4”, “GbG”, "", null,
- * You should implement the following static functions:
- */
 public class Ex1 {
     /**
      * Convert the given number (num) to a decimal representation (as int).
@@ -21,7 +8,7 @@ public class Ex1 {
      */
     public static int number2Int(String num) {
         if (num == null || num.isEmpty()) {
-            return -1;  // Invalid format
+            return -1;  // Invalid formyat
         }
 
         String number;
@@ -60,18 +47,17 @@ public class Ex1 {
                 base = Integer.parseInt(baseStr); // Convert to an integer
             }
         } else {
-            // Default base 10
             number = num;
-            base = 10;
+            base = 10; // default base 10
         }
 
-        // Convert the number part to decimal
+        // convert the number part to decimal
         int result = 0;
         for (int i = 0; i < number.length(); i++) {
             char c = number.charAt(i);
-            int digit = Character.digit(c, base); // Converts character to digit in the given base
+            int digit = Character.digit(c, base); // converts character to digit in the given base
             if (digit == -1) {
-                return -1; // Invalid character for the given base
+                return -1; // invalid character for the given base
             }
             result = result * base + digit;
         }
@@ -79,7 +65,7 @@ public class Ex1 {
         return result;
     }
 
-    private static boolean isValidNumericBase(String baseStr) {
+    public static boolean isValidNumericBase(String baseStr) {
         // Check if baseStr contains only digits and the range [2, 9]
         if (baseStr.isEmpty()) {
             return false;
@@ -129,7 +115,7 @@ public class Ex1 {
         if (base == 10) {
             return number;
         }
-        return number + "b" + baseStr;
+        return number.toUpperCase() + "b" + baseStr;
     }
 
     /**
@@ -141,9 +127,11 @@ public class Ex1 {
      */
     public static boolean equals(String n1, String n2) {
         boolean ans = true;
-        // add your code here
-
-        ////////////////////
+        int num1Value = Ex1.number2Int(n1);
+        int num2Value = Ex1.number2Int(n2);
+        if (!(num1Value == num2Value)) {
+            ans = false;
+        }
         return ans;
     }
 
