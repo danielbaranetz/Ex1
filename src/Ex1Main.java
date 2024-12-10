@@ -16,7 +16,7 @@ public class Ex1Main {
 
             // check if num1 is a valid number
             if (Ex1.isNumber(num1)) {
-                System.out.println("num1= " + num1 + " is number: " + Ex1.isNumber(num1) + " ," + "value: " + Ex1.number2Int(num1));
+                System.out.println("num1 = " + num1 + " is number: " + Ex1.isNumber(num1) + " ," + "value: " + Ex1.number2Int(num1));
                 System.out.println("Enter a string as number#2 (or \"quit\" to end the program): ");
                 num2 = sc.next();
 
@@ -25,7 +25,7 @@ public class Ex1Main {
                 }
 
                 if (Ex1.isNumber(num2)) {
-                    System.out.println("num2= " + num2 + " is number: " + Ex1.isNumber(num2) + " ," + "value: " + Ex1.number2Int(num2));
+                    System.out.println("num2 = " + num2 + " is number: " + Ex1.isNumber(num2) + " ," + "value: " + Ex1.number2Int(num2));
                     System.out.println("Enter a base for output: (a number [2,16]) ");
                     int base = sc.nextInt();
                     // Check if the base is between 2 and 16

@@ -30,9 +30,6 @@ public class Ex1 {
             if (number.matches("[a-z]+")) {
                 return -1;
             }
-            if (number.startsWith(" ")) {
-                return -1;
-            }
             // Determine the base
             if (baseStr.equals("A")) base = 10;
             else if (baseStr.equals("B")) base = 11;
