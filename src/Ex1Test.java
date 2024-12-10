@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -11,28 +12,29 @@ public class Ex1Test {
     void computeNumberTest() {
         String s2 = "1011b2";
         int v = Ex1.number2Int(s2);
-        assertEquals(v,11);
+        assertEquals(v, 11);
         String s10 = "1011bA";
         v = Ex1.number2Int(s10);
-        s2 = Ex1.int2Number(v,2);
+        s2 = Ex1.int2Number(v, 2);
         int v2 = Ex1.number2Int(s2);
-        assertEquals(v,v2);
-        assertTrue(Ex1.equals(s10,s2));
+        assertEquals(v, v2);
+        assertTrue(Ex1.equals(s10, s2));
     }
 
     @Test
     void isBasisNumberTest() {
         String[] good = {"1", "1b2", "01b2", "123bA", "ABbG", "0bA"};
-        for(int i=0;i<good.length;i=i+1) {
+        for (int i = 0; i < good.length; i = i + 1) {
             boolean ok = Ex1.isNumber(good[i]);
             assertTrue(ok);
         }
         String[] not_good = {"b2", "2b2", "1G3bG", " BbG", "0bbA", "abB", "!@b2", "A", "1bb2"};
-        for(int i=0;i<not_good.length;i=i+1) {
+        for (int i = 0; i < not_good.length; i = i + 1) {
             boolean not_ok = Ex1.isNumber(not_good[i]);
             assertFalse(not_ok);
         }
     }
+
     @Test
     void int2NumberTest() {
         assertEquals("101b2", Ex1.int2Number(5, 2), "b2 conversion failed");
@@ -51,6 +53,7 @@ public class Ex1Test {
 
         System.out.println("All test cases passed.");
     }
+
     @Test
     void number2IntTest() {
         assertEquals(-1, Ex1.number2Int("abcd"), "invalid number in string");
@@ -69,9 +72,10 @@ public class Ex1Test {
 
     @Test
     void maxIndexTest() {
-        String[] testArr = {"10bA","10bB","10100b2","1100100b2","99","1101b2","11111b2"};
+        String[] testArr = {"10bA", "10bB", "10100b2", "1100100b2", "99", "1101b2", "11111b2"};
         assertEquals(100, Ex1.maxIndex(testArr), "max index check failed");
     }
+
     @Test
     void isValidNumberBase() {
         assertTrue(Ex1.isValidNumberBase("2"), "should be True");
@@ -79,7 +83,6 @@ public class Ex1Test {
         assertFalse(Ex1.isValidNumberBase("17"), "should be False");
         assertTrue(Ex1.isValidNumberBase("9"), "should be True");
         assertFalse(Ex1.isValidNumberBase("10"), "should be False");
-
 
 
     }

@@ -62,6 +62,7 @@ public class Ex1 {
 
         return result;
     }
+
     /**
      * check if the given base string is valid (with range [2,9])
      *
