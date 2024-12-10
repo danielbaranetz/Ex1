@@ -1,14 +1,22 @@
 # **Ex1 binary calculator:**
 ## 🚀 Project Overview:
 #### A calculator that allows you to convert numbers from different bases (2-16) and multiply and sum to another base.
-
 ## 📦 **Key Features**:
 - Convert numbers between bases (2-16)
 - Sum values from different bases to chosen base
 - Multiply values from different bases to chosen base
 - Check for the max value number between the first prompt, second prompt, sum of 2 prompts and multiply of 2 prompts and return the max
 
+## 💡 How to run the program:
+### Option 1:
 
+- **git clone https://github.com/danielbaranetz/Ex1**
+- java -jar the/project/folder/src/Ex1.jar
+
+### Option 2:
+
+- **git clone https://github.com/danielbaranetz/Ex1**
+- Open project with intellij and run Ex1.Main file
 
 ##  💻 Example of the running code:
 #### Ex1 class solution:
@@ -29,3 +37,5 @@ Enter a base for output: (a number \[2,16])<br>
 5b6 * 7b9 = 100011b2<br>
 Max number over \[5b6,7b9,1100b2,100011b2] is: 100011b2
 
+## 🧑‍💻 **Author**
+#### -  🌐 [Daniel Baranetz Github](https://github.com/danielbaranetz)

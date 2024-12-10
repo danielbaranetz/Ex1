@@ -30,7 +30,7 @@ public class Ex1 {
             if (number.matches("[a-z]+")) {
                 return -1;
             }
-            // Determine the base
+            // map letters to integers bases
             if (baseStr.equals("A")) base = 10;
             else if (baseStr.equals("B")) base = 11;
             else if (baseStr.equals("C")) base = 12;
@@ -39,10 +39,10 @@ public class Ex1 {
             else if (baseStr.equals("F")) base = 15;
             else if (baseStr.equals("G")) base = 16;
             else {
-                if (!isValidNumericBase(baseStr)) {
+                if (!isValidNumberBase(baseStr)) {
                     return -1; // Invalid base format
                 }
-                base = Integer.parseInt(baseStr); // Convert to an integer
+                base = Integer.parseInt(baseStr); // convert to an integer
             }
         } else {
             number = num;
@@ -57,24 +57,29 @@ public class Ex1 {
             if (digit == -1) {
                 return -1; // invalid character for the given base
             }
-            result = result * base + digit;
+            result = result * base + digit; // build the number in base 10
         }
 
         return result;
     }
-
-    public static boolean isValidNumericBase(String baseStr) {
-        // Check if baseStr contains only digits and the range [2, 9]
+    /**
+     * check if the given base string is valid (with range [2,9])
+     *
+     * @param baseStr the base in string format
+     * @return true if the base is valid (with range [2,9])
+     */
+    public static boolean isValidNumberBase(String baseStr) {
+        // check if baseStr contains only digits and the range [2, 9]
         if (baseStr.isEmpty()) {
-            return false;
+            return false; //empty string is invalid
         }
         for (int i = 0; i < baseStr.length(); i++) {
             if (!Character.isDigit(baseStr.charAt(i))) {
-                return false;
+                return false; //base is not digit
             }
         }
         int base = Integer.parseInt(baseStr);
-        return base >= 2 && base <= 9;
+        return base >= 2 && base <= 9; // base in range [2,9]
     }
 
     /**
@@ -85,10 +90,10 @@ public class Ex1 {
      */
     public static boolean isNumber(String a) {
         boolean ans = true;
-        if (number2Int(a) == -1) {
+        if (number2Int(a) == -1) { //check the given number and false if not valid
             return !ans;
         } else {
-            return ans;
+            return ans; // valid number return true
         }
     }
 
@@ -103,19 +108,19 @@ public class Ex1 {
      */
     public static String int2Number(int num, int base) {
         if (num < 0 || base < 2 || base > 16) {
-            return "";
+            return ""; // number or base not valid
         }
-        String number = Integer.toString(num, base);
+        String number = Integer.toString(num, base); // convert the number to string with base
         String baseStr;
         if (base >= 10) {
-            baseStr = String.valueOf((char) ('A' + (base - 10)));
+            baseStr = String.valueOf((char) ('A' + (base - 10))); // convert base to A-G for bases 10-16
         } else {
-            baseStr = String.valueOf(base);
+            baseStr = String.valueOf(base); // base < 10 use the base
         }
         if (base == 10) {
-            return number;
+            return number; // base 10 returns the number
         }
-        return number.toUpperCase() + "b" + baseStr;
+        return number.toUpperCase() + "b" + baseStr; // return the number with base
     }
 
     /**
@@ -129,10 +134,10 @@ public class Ex1 {
         boolean ans = true;
         int num1Value = Ex1.number2Int(n1);
         int num2Value = Ex1.number2Int(n2);
-        if (!(num1Value == num2Value)) {
-            ans = false;
+        if (num1Value != num2Value) {
+            ans = false; // numbers not equal
         }
-        return ans;
+        return ans; // numbers equal
     }
 
     /**
@@ -144,11 +149,11 @@ public class Ex1 {
      * @return the index in the array in with the largest number (in value).
      */
     public static int maxIndex(String[] arr) {
-        int biggestNumber = 0;
+        int biggestNumber = 0; // initialize number with minimum
         for (int i = 0; i < arr.length; i++) {
-            int value = Ex1.number2Int(arr[i]);
-            if (value > biggestNumber) {
-                biggestNumber = value;
+            int value = Ex1.number2Int(arr[i]); // convert i to integer
+            if (value > biggestNumber) { // check if value bigger than biggestNumber at every iteration
+                biggestNumber = value; //update the largest value
             }
         }
         return biggestNumber;

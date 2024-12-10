@@ -51,12 +51,36 @@ public class Ex1Test {
 
         System.out.println("All test cases passed.");
     }
+    @Test
+    void number2IntTest() {
+        assertEquals(-1, Ex1.number2Int("abcd"), "invalid number in string");
+        assertEquals(-1, Ex1.number2Int(""), "invalid number in string");
+        assertEquals(-1, Ex1.number2Int("5b4"), "invalid number in string");
+        assertEquals(-1, Ex1.number2Int(" "), "invalid number in string");
+        assertEquals(5, Ex1.number2Int("5b6"), "valid number in string");
+        assertEquals(11, Ex1.number2Int("1011b2"), "valid number in string");
+        assertEquals(-1, Ex1.number2Int("1011bZ"), "invalid base in string");
+        assertEquals(-1, Ex1.number2Int("ffb16"), "invalid number in string");
+        assertEquals(255, Ex1.number2Int("FFbG"), "valid number in string");
+        assertEquals(31, Ex1.number2Int("11111b2"), "valid number in string");
+        assertEquals(-1, Ex1.number2Int("7Bb16"), "invalid base in string");
+        assertEquals(123, Ex1.number2Int("7BbG"), "valid number in string");
+    }
 
     @Test
     void maxIndexTest() {
         String[] testArr = {"10bA","10bB","10100b2","1100100b2","99","1101b2","11111b2"};
         assertEquals(100, Ex1.maxIndex(testArr), "max index check failed");
     }
+    @Test
+    void isValidNumberBase() {
+        assertTrue(Ex1.isValidNumberBase("2"), "should be True");
+        assertFalse(Ex1.isValidNumberBase("1"), "should be False");
+        assertFalse(Ex1.isValidNumberBase("17"), "should be False");
+        assertTrue(Ex1.isValidNumberBase("9"), "should be True");
+        assertFalse(Ex1.isValidNumberBase("10"), "should be False");
 
-    // Add additional test functions - test as much as you can.
+
+
+    }
 }
