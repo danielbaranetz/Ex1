@@ -42,12 +42,12 @@ public class Ex1Test {
         assertEquals("", Ex1.int2Number(10, 1), "base less than 2 should return an empty string");
         assertEquals("", Ex1.int2Number(10, 17), "base greater than 16 should return an empty string");
         assertEquals("0b2", Ex1.int2Number(0, 2), "conversion of 0 to base 2 failed");
-        assertEquals("0bG", Ex1.int2Number(0, 16), "Conversion of 0 to base 16 failed");
-        assertEquals("0", Ex1.int2Number(0, 10), "Conversion of 0 to base 10 failed");
-        assertEquals("11111111b2", Ex1.int2Number(255, 2), "Binary of 255 failed");
-        assertEquals("FFbG", Ex1.int2Number(255, 16), "Hexadecimal of 255 failed");
-        assertEquals("10b2", Ex1.int2Number(2, 2), "Conversion of 2 to base 2 failed");
-        assertEquals("2bG", Ex1.int2Number(2, 16), "Conversion of 2 to base 16 failed");
+        assertEquals("0bG", Ex1.int2Number(0, 16), "conversion of 0 to base 16 failed");
+        assertEquals("0", Ex1.int2Number(0, 10), "conversion of 0 to base 10 failed");
+        assertEquals("11111111b2", Ex1.int2Number(255, 2), "binary of 255 failed");
+        assertEquals("FFbG", Ex1.int2Number(255, 16), "hexadecimal of 255 failed");
+        assertEquals("10b2", Ex1.int2Number(2, 2), "conversion of 2 to base 2 failed");
+        assertEquals("2bG", Ex1.int2Number(2, 16), "conversion of 2 to base 16 failed");
 
         System.out.println("All test cases passed.");
     }

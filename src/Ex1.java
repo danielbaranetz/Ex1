@@ -7,15 +7,16 @@ public class Ex1 {
      * @return
      */
     public static int number2Int(String num) {
-        if (num == null || num.isEmpty()) {
-            return -1;  // Invalid formyat
+        if (num == null || num.isEmpty()) { // invalid input (null or empty string)
+
+            return -1;
         }
 
         String number;
         String baseStr;
         int base;
 
-        // Check if the input contains 'b'
+        // check if the input contains b and seperate number and base
         if (num.contains("b")) {
             String[] parts = num.split("b");
             if (parts.length != 2) {
@@ -104,7 +105,9 @@ public class Ex1 {
      * @return a String representing a number (in base) equals to num, or an empty String (in case of wrong input).
      */
     public static String int2Number(int num, int base) {
-        if (num < 0 || base < 2 || base > 16) return "";
+        if (num < 0 || base < 2 || base > 16) {
+            return "";
+        }
         String number = Integer.toString(num, base);
         String baseStr;
         if (base >= 10) {
