@@ -30,7 +30,7 @@ public class Ex1Main {
                     int base = sc.nextInt();
                     // Check if the base is between 2 and 16
                     if (base < 2 || base > 16) {
-                        System.out.println("(" + base + ") Invalid base! base must be between 2 and 16.");
+                        System.out.println("(" + base + ") Invalid base! base must be between 2 and 16F.");
                         continue;
                     }
                     // convert the input strings to integers
@@ -55,11 +55,11 @@ public class Ex1Main {
                     System.out.println(num1 + " * " + num2 + " = " + multiplyInBase);
                     System.out.println("Max number over [" + num1 + "," + num2 + "," + sumInBase + "," + multiplyInBase + "] is: " + biggestNumberBase);
                 } else {
-                    System.out.println("num2= " + num2 + "is number: " + Ex1.isNumber(num2) + ", value: " + Ex1.number2Int(num2));
+                    System.out.println("num2= " + num2 + " is number: " + Ex1.isNumber(num2) + ", value: " + Ex1.number2Int(num2));
                     System.out.println("ERR: num2 is in the wrong format! (" + num2 + ")");
                 }
             } else {
-                System.out.println("num1= " + num1 + "is number: " + Ex1.isNumber(num1) + ", value: " + Ex1.number2Int(num1));
+                System.out.println("num1= " + num1 + " is number: " + Ex1.isNumber(num1) + ", value: " + Ex1.number2Int(num1));
                 System.out.println("ERR: num1 is in the wrong format! (" + num1 + ")");
             }
         }
